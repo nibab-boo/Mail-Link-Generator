@@ -3,6 +3,9 @@ import React, { useEffect, useState } from 'react';
 const OutputLink = ({data}) => {
 
   const [link, setLink] = useState(data);
+  useEffect(() => {
+    setLink(data);
+  },[data])
 
   const copyLink = () => {
     navigator.clipboard.writeText(link);
