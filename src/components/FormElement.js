@@ -11,7 +11,7 @@ const FormElement = ({ sendLink}) => {
   const generateLink = (e) => {
     e.preventDefault();
     sendLink(
-      `<a href="mailto:${address}?cc=${cc}&bcc=${bcc}&subject=${subject}&body=${body.replace(" ", " %20").replace(/[\r\n]/gm, "%0D%0A")}">Send me a mail</a>`
+      `<a href="mailto:${address}?cc=${cc}&bcc=${bcc}&subject=${subject}&body=${body.replace(/[\r\n]/gm, "%0D%0A").replace(/\s/gm, "%20")}">Send me a mail</a>`
     )
   }
   return (
